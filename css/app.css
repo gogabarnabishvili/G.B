@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+.mianDiv {
+    background: url(../img/bgimage.jpg);
+    width: 370px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.mianDiv h1 {
+    color: rgb(232, 223, 206);
+}
+.mianDiv form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.mianDiv form label {
+    color: rgb(232, 223, 206);
+    width: 95%;
+
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+    border-bottom: 2px solid rgb(232, 223, 206);
+}
+.mianDiv form label input {
+    width: 220px;
+    background-color: initial;
+    border: none;
+    outline: none;
+    color: rgb(232, 223, 206);
+    padding-left: 20px;
+}
+#filtter {
+    cursor: pointer;
+    width: 40%;
+    height: 30px;
+    border-radius: 12px;
+    background-color: rgb(78, 115, 78);
+    color: rgb(232, 223, 206);
+}
+.wraper {
+    width: 85%;
+    height: 40vh;
+    overflow-y: scroll;
+    color: rgb(232, 223, 206);
+    border: 1px solid rgb(232, 223, 206);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+.wraper .smollBox {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    border: 1px solid rgb(232, 223, 206);
+}

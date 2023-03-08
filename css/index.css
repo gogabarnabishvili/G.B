@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+.mainDiv {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formBox {
+    background: url(../img/bgimage.jpg), no-repeat center;
+    background-size: cover;
+
+    width: 365px;
+    height: 100%;
+}
+.inFormMain,
+.regForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+}
+.formBox form h2,
+.regForm h2 {
+    color: rgb(232, 223, 206);
+}
+.formBox form label,
+.regForm label {
+    height: 40px;
+    color: rgb(232, 223, 206);
+    border-bottom: 2px solid rgb(232, 223, 206);
+}
+.regForm label {
+    width: 70%;
+    height: 45px;
+}
+.formBox form input {
+    width: 200px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: rgb(232, 223, 206);
+    padding-left: 20px;
+}
+#iAgree {
+    width: 20px;
+}
+#signIn,
+#signIn2 {
+    height: 30px;
+    border-radius: 12px;
+    background-color: rgb(001, 001, 001);
+    cursor: pointer;
+}
+/* .btnReg, */
+.signInReg,
+.formBox > form > .signInReg {
+    width: 70%;
+    height: 40px;
+    border: none;
+    background-color: rgb(128, 203, 128);
+    border-radius: 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.displayNone {
+    display: none;
+}

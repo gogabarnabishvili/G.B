@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <title>g.B-signin</title>
+    </head>
+    <body>
+        <main>
+            <div class="mainDiv">
+                <div class="formBox">
+                    <form action="" id="inForm" class="inFormMain">
+                        <h2>G.B</h2>
+                        <label for="name">
+                            სახელი :
+                            <input type="text" name="name" id="name" required />
+                        </label>
+                        <label for="password">
+                            პაროლი :
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                required
+                            />
+                        </label>
+                        <label for="iAgree">
+                            ვეთანხმები წესებს
+                            <input
+                                type="checkbox"
+                                name="iAgree"
+                                id="iAgree"
+                                required
+                            />
+                        </label>
+                        <a href="" id="signInLink">
+                            <input type="button" value="შესვლა" id="signIn" />
+                        </a>
+                        <button type="button" id="btnReg" class="signInReg">
+                            რეგისტრაცია
+                        </button>
+                    </form>
+                    <!-- registration form start -->
+                    <form action="" id="regForm" class="regForm displayNone">
+                        <h2>G.B</h2>
+                        <label for="name2">
+                            სახელი :
+                            <input
+                                type="text"
+                                name="name2"
+                                id="name2"
+                                required
+                            />
+                        </label>
+                        <label for="password2">
+                            პაროლი :
+                            <input
+                                type="password"
+                                name="password"
+                                id="password2"
+                                required
+                            />
+                        </label>
+                        <label for="password2Re">
+                            გაიმეორეთ პაროლი :
+                            <input
+                                type="password"
+                                name="password2Re"
+                                id="password2Re"
+                                required
+                            />
+                        </label>
+                        <label for="email">
+                            მეილი :
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                required
+                            />
+                        </label>
+                        <input
+                            type="button"
+                            value="მოთხოვნის გაშვება"
+                            id="signIn2"
+                            class="signIn"
+                        />
+                        <input
+                            type="button"
+                            value="დაბრუნება"
+                            class="signInReg"
+                        />
+                    </form>
+                </div>
+            </div>
+        </main>
+        <script src="index.js"></script>
+    </body>
+</html>
