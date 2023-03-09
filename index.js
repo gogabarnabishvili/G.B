@@ -75,8 +75,7 @@ function validForm() {
                         "signInLink"
                     ).href = "app.html");
                 } else {
-                    // displayNOne(signInBn);
-                    // alert("გთხოვთ გაიაროთ რეგისტრაცია");
+                    alert("შეამოწმეთ სახელი და პაროლი");
                 }
             });
         } else {

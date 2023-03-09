@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/addexpense.css" />
+        <title>add-expense</title>
+    </head>
+    <body>
+        <main>
+            <div class="mainDiv">
+                <h1>G.B</h1>
+                <form action="" id="form">
+                    <label for="data1">
+                        თარიღი :
+                        <input type="date" name="data1" id="data1" />
+                    </label>
+                    <label for="type">
+                        შემოსავალი
+                        <input type="radio" name="type" id="expense" />
+                        გასავალი
+                        <input type="radio" name="type" id="income" />
+                    </label>
+                    <label for="category" id="category1">
+                        კატეგორია
+                        <select name="category" id="selectCategory">
+                            <option value="expense">სხვა</option>
+                        </select>
+                    </label>
+                    <label for="money">
+                        თანხა :
+                        <input type="number" name="money" id="money" />
+                    </label>
+                    <input type="button" value="დამატება" id="addExpenseBtn" />
+                </form>
+                <a href="app.html">
+                    <button type="submit" id="addListBtn">ცხრილის ნახვა</button>
+                </a>
+            </div>
+        </main>
+        <script src="addexpense.js"></script>
+    </body>
+</html>

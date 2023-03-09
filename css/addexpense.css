@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main {
+    display: flex;
+    justify-content: center;
+}
+.mainDiv {
+    width: 370px;
+    height: 100vh;
+    background: url(../img/bgimage.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.mainDiv h1 {
+    color: rgb(232, 223, 206);
+}
+.mainDiv form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.mainDiv form label {
+    width: 100%;
+    color: rgb(232, 223, 206);
+    display: flex;
+    justify-content: space-between;
+}
+#category1 {
+    justify-content: flex-start;
+}
+#category1 > select {
+    margin-left: 25px;
+}
+.mainDiv form label input {
+    width: 70%;
+}
+#addExpenseBtn {
+    cursor: pointer;
+    width: 30%;
+    height: 30px;
+    border-radius: 12px;
+    background-color: rgb(78, 115, 78);
+}
+#addListBtn {
+    width: 150px;
+    height: 30px;
+    border-radius: 12px;
+    background-color: green;
+}

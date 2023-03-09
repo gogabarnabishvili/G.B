@@ -16,8 +16,9 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
+
 .mianDiv h1 {
     color: rgb(232, 223, 206);
 }
@@ -45,7 +46,8 @@ main {
     color: rgb(232, 223, 206);
     padding-left: 20px;
 }
-#filtter {
+#filtter,
+.addexpense {
     cursor: pointer;
     width: 40%;
     height: 30px;
@@ -59,10 +61,14 @@ main {
     overflow-y: scroll;
     color: rgb(232, 223, 206);
     border: 1px solid rgb(232, 223, 206);
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+}
+.wraper::-webkit-scrollbar {
+    display: none;
 }
 .wraper .smollBox {
     width: 90%;
@@ -71,4 +77,26 @@ main {
     gap: 5px;
     align-items: center;
     border: 1px solid rgb(232, 223, 206);
+    border-radius: 12px;
+}
+
+.totalInfo {
+    width: 85%;
+    color: rgb(232, 223, 206);
+    display: flex;
+    justify-content: space-between;
+}
+.totalInfo p {
+    width: 31%;
+    text-align: center;
+    border: 1px solid rgb(232, 223, 206);
+    border-radius: 12px;
+}
+.totalInfo p span {
+    display: block;
+    color: red;
+    margin-top: 15px;
+}
+.addexpense {
+    width: 150px;
 }
