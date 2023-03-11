@@ -11,7 +11,7 @@
         <main>
             <div class="mianDiv">
                 <h1>G.B</h1>
-                <form action="">
+                <form action="" id="renderForm">
                     <label for="data"
                         >თარიღი :
                         <input type="date" name="data" id="data" />
@@ -27,7 +27,7 @@
                     <input type="button" value="ძიება" id="filtter" />
                 </form>
                 <div class="wraper">
-                    <div class="smollBox">
+                    <!-- <div class="smollBox">
                         <p>თარიღი :20-20-1212</p>
                         <p>კატეგორია : კვება</p>
                         <p>თანხა : 200</p>
@@ -44,12 +44,12 @@
                         <p>კატეგორია : კვება</p>
                         <p>თანხა : 200</p>
                         <p>შემოსავალი/გასული</p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="totalInfo">
-                    <p>ჯამში შემოსავალი<span>1000</span></p>
+                    <p id="incomeMoney">ჯამში შემოსავალი</p>
                     <p>სხვაობა<span>100</span></p>
-                    <p>ჯამში გასავალი<span>2000</span></p>
+                    <p>ჯამში გასავალი<span>0</span></p>
                 </div>
                 <a href="addexpense.html"
                     ><button type="button" class="addexpense">
