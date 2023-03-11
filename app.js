@@ -41,50 +41,6 @@ const renderUsers = (arr) => {
 };
 
 renderUsers(userexpenses);
-function filterOriData(arrr) {}
-function filteredData(arry) {
-    function filterBy(arr) {
-        return arr.filter((e) => {
-            console.log(e);
-            form[filterBy].value === "" ||
-                element[filterBy] === form[filterBy].value;
-        });
-    }
-
-    function filterMinMax(min, max, filteredArr) {
-        return filteredArr.filter((element) => {
-            const amount = parseFloat(element.amount);
-            return (
-                (min === "" || amount >= parseFloat(min)) &&
-                (max === "" || amount <= parseFloat(max))
-            );
-        });
-    }
-
-    if (date !== "") {
-        filteredArr = filterBy("date", filteredArr);
-    }
-    if (category !== "") {
-        filteredArr = filterBy("category", filteredArr);
-    }
-    if (min !== "" || max !== "") {
-        filteredArr = filterMinMax(min, max, filteredArr);
-    }
-    return filteredArr;
-}
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const date = form.date.value;
-    const category = form.category.value;
-    const min = form.min.value;
-    const max = form.max.value;
-
-    const dataForRender = filteredData(userArray, date, category, min, max);
-
-    renderUsers(dataForRender);
-    renderTotal(dataForRender);
-});
 
 // dadaw
 const filtter = document.getElementById("filtter");
@@ -105,16 +61,18 @@ filtter.addEventListener("click", (e) => {
             ) {
                 alert("არ მოიძებნა ოპერაცია");
             } else {
-                console.log("loop");
-                renderUsers(e);
+                console.log(arrr);
+                renderUsers(arrr);
                 console.log("aq modis");
             }
         });
     };
+    dataForRender(userexpenses);
 });
+
 console.log(userexpenses);
 function backMoney(type, arr) {
-    return arr.filter((element) => element.type === type);
+    return arr.filter((e) => e.type === type);
 }
 
 function arryReduce(arr) {
