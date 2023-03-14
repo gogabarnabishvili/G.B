@@ -16,18 +16,40 @@
                         >თარიღი :
                         <input type="date" name="data" id="data" />
                     </label>
-                    <label for="categori">
-                        კატეგორია :
-                        <input type="text" name="categori" id="categori" />
-                    </label>
-                    <label for="money">
-                        თანხა :
-                        <input type="number" name="money" id="money" />
-                    </label>
+                    <div class="category">
+                        <label for="categoryIn">
+                            შემოსავალი :
+
+                            <select name="income2" id="income2"></select>
+                        </label>
+                        <label for="categoryEx">
+                            გასავალი :
+                            <!-- <input type="radio" name="income1" id="income1" /> -->
+                            <select name="expense2" id="expense2"></select>
+                        </label>
+                    </div>
+                    <div class="category">
+                        <label for="maxMoney" id="maxMoneyLabel">
+                            მაქსიმუმი :
+                            <input
+                                type="number"
+                                name="maxMoney"
+                                id="maxMoney"
+                            />
+                        </label>
+                        <label for="minMoney" id="minMoneyLabel">
+                            მინიმუმი :
+                            <input
+                                type="number"
+                                name="minMoney"
+                                id="minMoney"
+                            />
+                        </label>
+                    </div>
                     <input type="button" value="ძიება" id="filtter" />
                 </form>
                 <div class="wraper">
-                    <!-- <div class="smollBox">
+                    <div class="smollBox">
                         <p>თარიღი :20-20-1212</p>
                         <p>კატეგორია : კვება</p>
                         <p>თანხა : 200</p>
@@ -44,11 +66,11 @@
                         <p>კატეგორია : კვება</p>
                         <p>თანხა : 200</p>
                         <p>შემოსავალი/გასული</p>
-                    </div> -->
+                    </div>
                 </div>
                 <div class="totalInfo">
-                    <p id="incomeMoney">ჯამში შემოსავალი</p>
-                    <p>სხვაობა<span>100</span></p>
+                    <p>ჯამში შემოსავალი</p>
+                    <p>სხვაობა<span>0</span></p>
                     <p>ჯამში გასავალი<span>0</span></p>
                 </div>
                 <a href="addexpense.html"

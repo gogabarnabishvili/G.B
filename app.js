@@ -4,7 +4,6 @@ const backExpenses = (strogekey = "expenses") => {
         const exisitingParsed = JSON.parse(exisitingExpenses);
         return exisitingParsed;
     } else {
-        alert("თქვენ არ გიფიქსირდებათ ტრანზაქციები");
     }
 };
 
@@ -13,7 +12,6 @@ const userexpenses = backExpenses();
 const wraper = document.querySelector(".wraper");
 const form = document.getElementById("renderForm");
 
-//function for render array which is filtered or not;
 const renderUsers = (arr) => {
     wraper.innerHTML = "";
     arr.map((e) => {
@@ -21,13 +19,17 @@ const renderUsers = (arr) => {
         smollBox.classList = "smollBox";
         function eType(type) {
             smollBox.innerHTML = `
-            
+
                 <p>თარიღი : ${e.data}</p>
                 <p>კატეგორია : ${e.category}</p>
                 <p>თანხა : ${e.money}</p>
                 <p>${type}</p>
-            
-            
+                
+                <div class="btnAndMar">
+                <button>x</button>
+                <input type="checkbox" name="mark" id="mark" />
+            </div>
+
             `;
         }
 
@@ -42,147 +44,77 @@ const renderUsers = (arr) => {
 
 renderUsers(userexpenses);
 
-// dadaw
+const expense2 = document.getElementById("expense2");
+const income2 = document.getElementById("income2");
+const maxMoneyLabel = document.getElementById("maxMoneyLabel");
+const minMoneyLabel = document.getElementById("minMoneyLabel");
 const filtter = document.getElementById("filtter");
 const renderForm = document.getElementById("renderForm");
 
-filtter.addEventListener("click", (e) => {
-    e.preventDefault();
+// const data1 = renderForm.data.value;
+// const income = income2.value;
+// const expenses = expense2.value;
+// const minMoney = minMoneyLabel.value;
+// const maxMoney = maxMoneyLabel.value;
 
-    const dataForRender = (arrr) => {
-        arrr.filter((e) => {
-            if (
-                (renderForm.data.value !== e.data ||
-                    renderForm.data.value === "") &&
-                (renderForm.categori.value !== e.category ||
-                    renderForm.categori.value === "") &&
-                (renderForm.money.value !== e.money ||
-                    renderForm.money.value === "")
-            ) {
-                alert("არ მოიძებნა ოპერაცია");
-            } else {
-                console.log(arrr);
-                renderUsers(arrr);
-                console.log("aq modis");
-            }
-        });
-    };
-    dataForRender(userexpenses);
+// function validFilter(postarr) {
+//     postarr.map((e) => {
+//         if (
+//             (renderForm.data.value === e.data ||
+//                 renderForm.data.value === "") &&
+//             (income === e.category ||
+//                 expenses === e.category ||
+//                 income === "" ||
+//                 expenses === "") &&
+//             (minMoney >= e.money ||
+//                 maxMoney <= e.money ||
+//                 minMoney === "" ||
+//                 maxMoney === "")
+//         ) {
+//             console.log("rame");
+//         } else {
+//             console.log(renderForm.data.value === e.data);
+//         }
+//     });
+// }
+
+// console.log(renderForm.data.value);
+// console.log(filtter);
+const newArryUser = [];
+filtter.addEventListener("click", () => {
+    newArryUser.length = 0;
+    userexpenses.map((e) => {
+        if (
+            e.data === renderForm.data.value ||
+            (renderForm.data.value === "" &&
+                (e.category === income2.value || income2.value === "")) ||
+            e.category === expense2.value ||
+            (expense2.value === "" && e.money <= renderForm.maxMoney.value) ||
+            (renderForm.maxMoney.value === "" &&
+                e.money >= renderForm.minMoney.value) ||
+            renderForm.minMoney.value === ""
+        ) {
+            newArryUser.push(e);
+            renderUsers(newArryUser);
+            console.log(e.category);
+        } else {
+            console.log("rame");
+        }
+    });
 });
 
-console.log(userexpenses);
-function backMoney(type, arr) {
-    return arr.filter((e) => e.type === type);
-}
+// render option need export
 
-function arryReduce(arr) {
-    return arr.reduce((acc, cur) => {
-        let result = (acc += +cur.amount);
-
-        return result;
-    }, 0);
-}
-function moneyTotalTre(arr) {
-    return arr.map((e) => {
-        e.money;
-        // console.log(e.money);
+function filterOption(arr, append) {
+    const arryMap = arr.map((e) => {
+        const option = document.createElement("option");
+        option.className = "option";
+        option.innerHTML = e;
+        append.append(option);
     });
 }
-function totalMoneyY(arr) {
-    return arr.reduce((acc, cur) => {
-        let result = acc - cur;
-        return result;
-    }, 0);
-}
-function moneyTotal(arr) {
-    // console.log(arr);
-    const incomeMoney = document.querySelector(".totalInfo");
 
-    const incomeTotalArr = backMoney("income", arr);
-    const expensTotalArr = backMoney("expense", arr);
-    const moneyTotal2 = moneyTotalTre(arr);
-    // console.log(moneyTotal2);
-
-    const incomeTotal = arryReduce(incomeTotalArr);
-    const expensTotal = arryReduce(expensTotalArr);
-    const youTotal = totalMoneyY(moneyTotal2);
-    console.log(moneyTotal(arr));
-    incomeMoney.innerHTML = `
-    <p>ჩარიცხვები <span> ${incomeTotal}</span></p>
-    <p>ანგარიში <span> ${youTotal}</span></p>
-    <p>ხარჯი <span> ${expensTotal}</span></p>
-  
-  `;
-}
-
-moneyTotal(userexpenses);
-console.log(userexpenses);
-// const wraper = document.querySelector(".wraper");
-// function renderPosts(arr) {
-//     expensesReding(userexpenses);
-//     arr.map((e) => {
-//         // console.log(e);
-//         const smollBox = document.createElement("div");
-//         smollBox.className = "smollBox";
-//         const dataRender = document.createElement("p");
-//         const categoryRender = document.createElement("p");
-//         const moneyRender = document.createElement("p");
-//         const incomeExRender = document.createElement("p");
-
-//         dataRender.innerHTML = `თარიღი : ${e.data}`;
-//         categoryRender.innerHTML = `კატეგორია : ${e.category}`;
-//         moneyRender.innerHTML = `თანხა : ${e.money}`;
-//         if (e.type === "შემოსავალი") {
-//             incomeExRender.innerHTML = `${e.type}`;
-//         } else {
-//             incomeExRender.innerHTML = `${e.type}`;
-//         }
-//         wraper.append(smollBox);
-//         smollBox.append(
-//             dataRender,
-//             categoryRender,
-//             moneyRender,
-//             incomeExRender
-//         );
-//     });
-// }
-
-// renderRecords(userexpenses);
-// renderPosts(userlocals);
-
-// const filtter = document.getElementById("filtter");
-// const newUserArr = [];
-// function filterForm(serchform) {
-//     filtter.addEventListener("click", (e) => {
-//         userexpenses.filter((e) => {
-//             if (
-//                 (serchform.data.value !== e.data ||
-//                     serchform.data.value === "") &&
-//                 (serchform.categori.value !== e.category ||
-//                     serchform.categori.value === "") &&
-//                 (serchform.money.value !== e.money ||
-//                     serchform.money.value === "")
-//             ) {
-//                 alert("არ მოიძებნა ოპერაცია");
-//             } else {
-//                 newUserArr.map((el) => {
-//                     if (e !== el) {
-//                         newUserArr.push(e);
-//                         renderRecords(newUserArr);
-//                         console.log("no more");
-//                     } else {
-//                     }
-//                 });
-
-// renderPosts(userexpenses);
-// for (let i = 0; userexpenses.length >= i; i++) {
-//     if (e.data === userexpenses[i].data) {
-
-//     }
-// }
-// }
-//         });
-//     });
-// }
-// renderPosts(userexpenses);
-// filterForm(renderForm)
+const inComeOption = ["ხელფასი", "ბონუსი", "ჩარიცხვა", "ნასესხები"];
+const expenseOption = ["კვება", "მარკეტი", "სამედიცინო", "ჯარიმა"];
+filterOption(expenseOption, expense2);
+filterOption(inComeOption, income2);

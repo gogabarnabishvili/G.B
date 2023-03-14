@@ -36,29 +36,57 @@ const saveExpenses = (expense, storageKey = "user") => {
     }
 };
 
+const backExpenses = (strogekey = "user") => {
+    const exisitingExpenses = localStorage.getItem(strogekey);
+    if (exisitingExpenses !== null) {
+        const exisitingParsed = JSON.parse(exisitingExpenses);
+        return exisitingParsed;
+    } else {
+        alert("თქვენ არ გიფიქსირდებათ ტრანზაქციები");
+    }
+};
+backExpenses("user");
+const userBack = backExpenses("user");
+const signIn = document.getElementById("signIn");
+const validValiu = document.getElementById("iAgree");
+function backValiu(kay) {
+    kay.map((e) => {
+        if (kay) {
+            inForm.name.value = e.name;
+            inForm.password.value = e.password;
+        } else {
+            console.log("false");
+        }
+    });
+}
+validValiu.addEventListener("change", () => {
+    backValiu(userBack);
+});
+
 function userInfoSend() {
     signIn2.addEventListener("click", () => {
         if (
             regForm["name2"].value !== "" &&
-            regForm["password2Re"].value !== "" &&
-            regForm["password2Re"].value !== "" &&
+            regForm["password2"].value !== "" &&
+            regForm["password2Re"].value === regForm["password2"].value &&
             regForm["email"].value !== ""
         ) {
             users["name"] = regForm["name2"].value;
             users["password"] = regForm["password2Re"].value;
             users["email"] = regForm["email"].value;
             saveExpenses(users);
+            signIn2.style.backgroundColor = "green";
+            signIn2.value = "გავლილია ვალიდაცია";
         } else {
-            console.log("errtor");
         }
     });
 }
 userInfoSend();
-const signIn = document.getElementById("signIn");
 
 const usersBack = localStorage.getItem("user");
 const parseUsers = JSON.parse(usersBack);
 
+validValiu.addEventListener("change", (e) => {});
 function validForm() {
     signIn.addEventListener("click", (el) => {
         // el.preventDefault;
@@ -75,13 +103,10 @@ function validForm() {
                         "signInLink"
                     ).href = "app.html");
                 } else {
-                    alert("შეამოწმეთ სახელი და პაროლი");
                 }
             });
         } else {
-            alert("გაიარეთ რეგისტრაცა");
         }
-        // if(signIn.name.value === )
     });
 }
 validForm();
